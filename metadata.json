@@ -1,0 +1,6 @@
+{
+  "name": "PharmaPedia - Diccionario Médico-Farmacéutico",
+  "description": "Base de datos interactiva de medicamentos, clasificaciones farmacológicas, presentaciones, posología, seguridad e interacciones para profesionales de la salud.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
