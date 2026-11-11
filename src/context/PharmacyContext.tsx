@@ -2,9 +2,9 @@ import React, { createContext, useContext, useState, useEffect } from 'react';
 import { Classification, Medication } from '../types/pharmacy';
 import { INITIAL_CLASSIFICATIONS, INITIAL_MEDICATIONS } from '../data/initialMedications';
 
-const STORAGE_KEY_MEDICATIONS = 'pharmadex_medications_v3';
-const STORAGE_KEY_CLASSIFICATIONS = 'pharmadex_classifications_v3';
-const STORAGE_KEY_THEME = 'pharmadex_theme';
+const STORAGE_KEY_MEDICATIONS = 'pharmapedia_medications_v4';
+const STORAGE_KEY_CLASSIFICATIONS = 'pharmapedia_classifications_v4';
+const STORAGE_KEY_THEME = 'pharmapedia_theme';
 
 interface PharmacyContextType {
   medications: Medication[];
@@ -70,6 +70,18 @@ export const PharmacyProvider: React.FC<{ children: React.ReactNode }> = ({ chil
       root.classList.remove('dark');
     }
   }, [theme]);
+
+  // Clean up legacy storage keys once
+  useEffect(() => {
+    try {
+      ['pharmadex_medications', 'pharmadex_medications_v2', 'pharmadex_medications_v3',
+       'pharmadex_classifications', 'pharmadex_classifications_v2', 'pharmadex_classifications_v3'].forEach(k => {
+        localStorage.removeItem(k);
+      });
+    } catch {
+      // ignore
+    }
+  }, []);
 
   const toggleTheme = () => {
     setTheme(prev => (prev === 'dark' ? 'light' : 'dark'));

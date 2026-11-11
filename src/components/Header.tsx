@@ -90,11 +90,12 @@ export const Header: React.FC<HeaderProps> = ({ onOpenDatabaseTools }) => {
         <div className="flex items-center gap-3 shrink-0">
           <button
             onClick={onOpenDatabaseTools}
-            title="Herramientas de Base de Datos (JSON / Respaldo)"
-            className="p-2 text-slate-500 hover:text-slate-800 dark:text-slate-400 dark:hover:text-slate-100 rounded-lg border border-slate-200 dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
-            aria-label="Herramientas de datos"
+            title="Sincronizar, exportar e importar datos para la web publicada"
+            className="flex items-center gap-1.5 px-2.5 py-1.5 text-xs font-semibold text-slate-700 dark:text-slate-300 rounded-lg border border-slate-200 dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-teal-700 dark:hover:text-teal-300 transition-colors cursor-pointer"
+            aria-label="Sincronizar datos"
           >
-            <Database className="w-4 h-4" />
+            <Database className="w-4 h-4 text-teal-600 dark:text-teal-400" />
+            <span className="hidden sm:inline">Sincronizar</span>
           </button>
 
           <button
