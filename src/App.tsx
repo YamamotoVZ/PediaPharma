@@ -9,6 +9,8 @@ import { Header } from './components/Header';
 import { HomeView } from './components/HomeView';
 import { VademecumView } from './components/VademecumView';
 import { ClassificationsView } from './components/ClassificationsView';
+import { VideosView } from './components/VideosView';
+import { RepasoView } from './components/RepasoView';
 import { InteractionChecker } from './components/InteractionChecker';
 import { ClinicalCalculators } from './components/ClinicalCalculators';
 import { MedicationDetailModal } from './components/MedicationDetailModal';
@@ -30,6 +32,8 @@ const AppContent: React.FC = () => {
         {activeTab === 'home' && <HomeView />}
         {activeTab === 'vademecum' && <VademecumView />}
         {activeTab === 'classifications' && <ClassificationsView />}
+        {activeTab === 'videos' && <VideosView />}
+        {activeTab === 'repaso' && <RepasoView />}
         {activeTab === 'interactions' && <InteractionChecker />}
         {activeTab === 'calculators' && <ClinicalCalculators />}
       </main>

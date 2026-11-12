@@ -9,8 +9,8 @@ const STORAGE_KEY_THEME = 'pharmapedia_theme';
 interface PharmacyContextType {
   medications: Medication[];
   classifications: Classification[];
-  activeTab: 'home' | 'vademecum' | 'classifications' | 'interactions' | 'calculators';
-  setActiveTab: (tab: 'home' | 'vademecum' | 'classifications' | 'interactions' | 'calculators') => void;
+  activeTab: 'home' | 'vademecum' | 'classifications' | 'videos' | 'repaso' | 'interactions' | 'calculators';
+  setActiveTab: (tab: 'home' | 'vademecum' | 'classifications' | 'videos' | 'repaso' | 'interactions' | 'calculators') => void;
   navigateToAlphabeticalMedications: () => void;
   navigateToClassification: (classificationId: string) => void;
   
@@ -133,7 +133,7 @@ export const PharmacyProvider: React.FC<{ children: React.ReactNode }> = ({ chil
   }, [classifications]);
 
   // Tab & UI navigation
-  const [activeTab, setActiveTab] = useState<'home' | 'vademecum' | 'classifications' | 'interactions' | 'calculators'>('home');
+  const [activeTab, setActiveTab] = useState<'home' | 'vademecum' | 'classifications' | 'videos' | 'repaso' | 'interactions' | 'calculators'>('home');
   const [selectedMedication, setSelectedMedication] = useState<Medication | null>(null);
   const [isDetailOpen, setIsDetailOpen] = useState(false);
 

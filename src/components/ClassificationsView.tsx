@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Folder, Plus, Edit2, Trash2, ArrowRight, Pill, ExternalLink, Search } from 'lucide-react';
+import { Folder, Plus, Edit2, Trash2, ArrowRight, Pill, ExternalLink, Search, Video } from 'lucide-react';
 import { usePharmacy } from '../context/PharmacyContext';
 import { Classification, Medication } from '../types/pharmacy';
 
@@ -12,7 +12,8 @@ export const ClassificationsView: React.FC = () => {
     openCreateForm,
     addClassification,
     updateClassification,
-    deleteClassification
+    deleteClassification,
+    setActiveTab
   } = usePharmacy();
 
   const [searchFilter, setSearchFilter] = useState('');
@@ -217,12 +218,21 @@ export const ClassificationsView: React.FC = () => {
                 <div className="space-y-2 mt-4">
                   <div className="flex items-center justify-between text-xs font-semibold text-slate-700 dark:text-slate-300">
                     <span>Fármacos en este grupo ({groupMedications.length}):</span>
-                    <button
-                      onClick={() => openCreateForm(c.id)}
-                      className="text-teal-600 dark:text-teal-400 hover:underline text-[11px] font-semibold"
-                    >
-                      + Añadir fármaco a {c.name}
-                    </button>
+                    <div className="flex items-center gap-3">
+                      <button
+                        onClick={() => setActiveTab('videos')}
+                        className="text-teal-600 dark:text-teal-400 hover:underline text-[11px] font-semibold inline-flex items-center gap-1"
+                      >
+                        <Video className="w-3 h-3" />
+                        <span>Ver Videos</span>
+                      </button>
+                      <button
+                        onClick={() => openCreateForm(c.id)}
+                        className="text-teal-600 dark:text-teal-400 hover:underline text-[11px] font-semibold"
+                      >
+                        + Añadir fármaco
+                      </button>
+                    </div>
                   </div>
 
                   {groupMedications.length === 0 ? (

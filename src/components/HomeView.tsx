@@ -10,7 +10,9 @@ import {
   Sparkles, 
   BookOpen,
   CheckCircle2,
-  Activity
+  Activity,
+  Video,
+  GraduationCap
 } from 'lucide-react';
 import { usePharmacy } from '../context/PharmacyContext';
 import { Classification } from '../types/pharmacy';
@@ -108,6 +110,20 @@ export const HomeView: React.FC = () => {
 
           {/* Quick tool shortcuts */}
           <div className="pt-2 flex flex-wrap items-center gap-3">
+            <button
+              onClick={() => setActiveTab('videos')}
+              className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-white text-xs sm:text-sm font-semibold backdrop-blur-md border border-white/10 transition-colors cursor-pointer"
+            >
+              <Video className="w-4 h-4 text-teal-400" />
+              <span>Videoteca</span>
+            </button>
+            <button
+              onClick={() => setActiveTab('repaso')}
+              className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-white text-xs sm:text-sm font-semibold backdrop-blur-md border border-teal-400/30 transition-colors cursor-pointer"
+            >
+              <GraduationCap className="w-4 h-4 text-teal-300" />
+              <span>Repaso Clínico</span>
+            </button>
             <button
               onClick={() => setActiveTab('interactions')}
               className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-white text-xs sm:text-sm font-semibold backdrop-blur-md border border-white/10 transition-colors cursor-pointer"

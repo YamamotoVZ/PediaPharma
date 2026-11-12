@@ -99,3 +99,17 @@ export interface Classification {
   mechanismSummary?: string;
   color?: string; // Clave de color suave
 }
+
+export interface EducationalVideo {
+  id: string;
+  title: string;
+  classificationId: string;
+  classificationName: string;
+  youtubeId: string;
+  channelName: string;
+  duration: string;
+  difficulty: 'Básico' | 'Intermedio' | 'Avanzado';
+  description: string;
+  topics: string[];
+  recommendedKeyDrugs: string[];
+}

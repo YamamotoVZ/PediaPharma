@@ -1,5 +1,4 @@
-import React from 'react';
-import { Plus, Sun, Moon, Database } from 'lucide-react';
+import { Plus, Sun, Moon, Database, Video, GraduationCap } from 'lucide-react';
 import { usePharmacy } from '../context/PharmacyContext';
 
 interface HeaderProps {
@@ -63,6 +62,28 @@ export const Header: React.FC<HeaderProps> = ({ onOpenDatabaseTools }) => {
             }`}
           >
             Clasificaciones
+          </button>
+          <button
+            onClick={() => setActiveTab('videos')}
+            className={`transition-colors whitespace-nowrap shrink-0 py-1 border-b-2 cursor-pointer flex items-center gap-1.5 ${
+              activeTab === 'videos'
+                ? 'border-teal-600 text-teal-700 dark:border-teal-400 dark:text-teal-300 font-semibold'
+                : 'border-transparent hover:text-slate-900 dark:hover:text-white'
+            }`}
+          >
+            <Video className="w-3.5 h-3.5" />
+            <span>Videos</span>
+          </button>
+          <button
+            onClick={() => setActiveTab('repaso')}
+            className={`transition-colors whitespace-nowrap shrink-0 py-1 border-b-2 cursor-pointer flex items-center gap-1.5 ${
+              activeTab === 'repaso'
+                ? 'border-teal-600 text-teal-700 dark:border-teal-400 dark:text-teal-300 font-semibold'
+                : 'border-transparent hover:text-slate-900 dark:hover:text-white'
+            }`}
+          >
+            <GraduationCap className="w-3.5 h-3.5" />
+            <span>Repaso</span>
           </button>
           <button
             onClick={() => setActiveTab('interactions')}
@@ -137,6 +158,18 @@ export const Header: React.FC<HeaderProps> = ({ onOpenDatabaseTools }) => {
           className={`px-2 py-1 rounded cursor-pointer ${activeTab === 'classifications' ? 'text-teal-700 dark:text-teal-300 font-bold' : 'text-slate-600 dark:text-slate-400'}`}
         >
           Clasificaciones
+        </button>
+        <button
+          onClick={() => setActiveTab('videos')}
+          className={`px-2 py-1 rounded cursor-pointer ${activeTab === 'videos' ? 'text-teal-700 dark:text-teal-300 font-bold' : 'text-slate-600 dark:text-slate-400'}`}
+        >
+          Videos
+        </button>
+        <button
+          onClick={() => setActiveTab('repaso')}
+          className={`px-2 py-1 rounded cursor-pointer ${activeTab === 'repaso' ? 'text-teal-700 dark:text-teal-300 font-bold' : 'text-slate-600 dark:text-slate-400'}`}
+        >
+          Repaso
         </button>
         <button
           onClick={() => setActiveTab('interactions')}
